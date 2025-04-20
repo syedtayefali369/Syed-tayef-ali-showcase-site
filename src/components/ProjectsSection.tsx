@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github } from "lucide-react";
@@ -32,10 +31,11 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-muted/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="projects" className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 pointer-events-none"></div>
+      <div className="container mx-auto px-4 md:px-6 relative">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Projects</h2>
           <div className="w-20 h-1 bg-primary mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl">
             Here are some of the projects I've worked on. Each project showcases different skills and technologies.
@@ -44,35 +44,34 @@ const ProjectsSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col h-full">
+            <Card key={index} className="glass hover-card overflow-hidden">
               <div className="overflow-hidden">
                 <img 
                   src={project.imageUrl} 
                   alt={project.title} 
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>
               <CardContent className="flex-1 flex flex-col p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 gradient-text">{project.title}</h3>
                 <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-xs px-2 py-1 bg-secondary rounded-full">
+                    <span key={tag} className="text-xs px-2 py-1 glass rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-3 mt-auto">
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" className="glass hover-card" asChild>
                     <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" asChild>
+                  <Button size="sm" className="glass hover-card" asChild>
                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      Demo
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      Live Demo
                     </a>
                   </Button>
                 </div>

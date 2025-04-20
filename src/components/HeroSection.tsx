@@ -9,8 +9,8 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1 space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="block">Hi, I'm Tayef Ali</span>
-              <span className="block text-primary mt-2">Web Developer</span>
+              <span className="block">Hi, I'm</span>
+              <span className="block gradient-text mt-2">Tayef Ali</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-md">
@@ -18,32 +18,38 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <Button asChild>
+              <Button className="glass hover-card" asChild>
                 <a href="#contact">Get in Touch</a>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" className="glass hover-card" asChild>
                 <a href="#projects">View Projects</a>
               </Button>
             </div>
             
             <div className="flex items-center gap-4 pt-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-foreground transition-colors">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                className="glass p-2 rounded-full hover-card">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-foreground transition-colors">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+                className="glass p-2 rounded-full hover-card">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="mailto:example@email.com" className="text-foreground/80 hover:text-foreground transition-colors">
+              <a href="mailto:example@email.com" 
+                className="glass p-2 rounded-full hover-card">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
           
           <div className="flex-1 flex justify-center md:justify-end">
-            <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary/20 to-primary/40 rounded-full flex items-center justify-center">
-              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-background flex items-center justify-center text-7xl font-bold">
-                TA
-              </div>
+            <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full blur-3xl"></div>
+              <img 
+                src="/lovable-uploads/de2db2fd-4c3e-403a-b4a3-5713f215e52f.png"
+                alt="Tayef Ali"
+                className="relative w-full h-full object-cover rounded-full border-4 border-white/10 hover-card"
+              />
             </div>
           </div>
         </div>

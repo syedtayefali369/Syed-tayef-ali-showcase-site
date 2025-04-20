@@ -18,10 +18,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md z-50 border-b">
+    <nav className="fixed top-0 left-0 right-0 glass z-50">
       <div className="container mx-auto px-4 md:px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl md:text-2xl font-bold">
+          <Link to="/" className="text-xl md:text-2xl font-bold gradient-text">
             Tayef Ali
           </Link>
 
@@ -31,17 +31,17 @@ const Navbar = () => {
               <a 
                 key={item.label}
                 href={item.href}
-                className="text-foreground/80 hover:text-foreground transition-colors"
+                className="text-foreground/80 hover:text-foreground transition-colors hover-card px-2 py-1 rounded"
               >
                 {item.label}
               </a>
             ))}
-            <Button size="sm">Resume</Button>
+            <Button className="glass hover-card">Resume</Button>
           </div>
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-foreground" 
+            className="md:hidden glass p-2 rounded" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -51,18 +51,18 @@ const Navbar = () => {
 
         {/* Mobile navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 px-2 space-y-3">
+          <div className="md:hidden py-4 px-2 space-y-3 glass mt-2 rounded">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-2 text-foreground/80 hover:text-foreground transition-colors"
+                className="block py-2 text-foreground/80 hover:text-foreground transition-colors hover:bg-white/5 px-4 rounded"
                 onClick={toggleMenu}
               >
                 {item.label}
               </a>
             ))}
-            <Button size="sm" className="mt-2 w-full">Resume</Button>
+            <Button className="glass hover-card w-full mt-4">Resume</Button>
           </div>
         )}
       </div>

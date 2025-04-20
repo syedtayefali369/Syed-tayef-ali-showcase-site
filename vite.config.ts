@@ -21,3 +21,9 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
+// Add these scripts to your package.json file instead:
+// "scripts": {
+//   "predeploy": "npm run build",
+//   "deploy": "gh-pages -d build"
+// }

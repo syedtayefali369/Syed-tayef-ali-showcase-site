@@ -27,7 +27,7 @@ const HeroSection = () => {
             </div>
             
             <div className="flex items-center gap-4 pt-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://github.com/syedtayefali369" target="_blank" rel="noopener noreferrer" 
                 className="glass p-2 rounded-full hover-card">
                 <Github className="w-5 h-5" />
               </a>
